@@ -5,3 +5,7 @@
     owner: planeta
     group: planeta
     mode: u=rw,g=r,o=r
+
+- synchronize: Synchronize .config directory
+    src: .config
+    dest: /home/planeta/.config
