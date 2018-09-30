@@ -1,0 +1,4 @@
+- name: create user planeta
+  user: 
+    name: planeta 
+    groups: planeta,wheel

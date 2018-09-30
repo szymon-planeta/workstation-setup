@@ -1,0 +1,7 @@
+- name: Copy .bashrc
+  copy:
+    src: .bashrc
+    dest: /home/planeta/.bashrc
+    owner: planeta
+    group: planeta
+    mode: u=rw,g=r,o=r
