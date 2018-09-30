@@ -4,4 +4,7 @@
     state: present
   with_items:
     - vim
+    - git
+    - tmux
     - htop
+    - fzf
