@@ -6,7 +6,7 @@
     group: planeta
     mode: u=rw,g=r,o=r
 
-- name: Synchronize .config directory
-  synchronize: 
-    src: .config
-    dest: /home/planeta/.config
+    #- name: Synchronize .config directory
+    #  synchronize: 
+    #    src: .config
+    #    dest: /home/planeta/.config

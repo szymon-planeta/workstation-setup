@@ -1,10 +1,24 @@
-- name: Install dnf packages
-  dnf:
+- name: Install apt packages
+  apt:
     name: "{{item}}"
     state: present
   with_items:
+    - ansible
     - vim
     - git
     - tmux
     - htop
-    - fzf
+
+- name: Clone fzf repo
+  git: 
+    repo: https://github.com/junegunn/fzf.git 
+    dest: /tmp/fzf
+    depth: 1
+
+- name: Install fzf
+  command: sh /tmp/fzf/install
+
+- name: Remove fzf repo
+  file:
+    path: /tmp/fzf
+    state: absent
