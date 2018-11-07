@@ -18,7 +18,7 @@
     depth: 1
 
 - name: Install fzf
-  command: /home/planeta/.fzf/install --all
+  command: /home/planeta/.fzf/install --key-bindings --completion --no-update-rc
 
 - name: Remove fzf repo
   file:
