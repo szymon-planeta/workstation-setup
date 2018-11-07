@@ -8,17 +8,19 @@
     - git
     - tmux
     - htop
+  become: yes
+  become_method: sudo
 
 - name: Clone fzf repo
   git: 
     repo: https://github.com/junegunn/fzf.git 
-    dest: /tmp/fzf
+    dest: /home/planeta/.fzf
     depth: 1
 
 - name: Install fzf
-  command: sh /tmp/fzf/install
+  command: /home/planeta/.fzf/install --all
 
 - name: Remove fzf repo
   file:
-    path: /tmp/fzf
+    path: /home/planeta/.fzf
     state: absent
