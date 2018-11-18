@@ -1,0 +1,7 @@
+- name: Copy .bashrc
+  copy:
+    src: greeter.dconf-defaults
+    dest: /etc/gdm3/greeter.dconf-defaults
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r

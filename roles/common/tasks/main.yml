@@ -7,5 +7,5 @@
 - name: Configure apps
   import_tasks: configs.yml
 
-- name: Configure gsettings
-  import_tasks: gsettings.yml
+- name: Configure desktop environment 
+  import_tasks: desktop-env.yml
