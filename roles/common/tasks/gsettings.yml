@@ -1,3 +1,6 @@
+- name: Set default session to Budgie
+  file: src=budgie-desktop.desktop path=/usr/share/xsessions/default.desktop state=link
+
 - name: Set gsettings
   command: gsettings set "{{item}}"
   with_items: 
