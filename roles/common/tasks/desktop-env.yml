@@ -1,7 +1,11 @@
-- name: Copy .bashrc
-  copy:
-    src: greeter.dconf-defaults
-    dest: /etc/gdm3/greeter.dconf-defaults
-    owner: root
-    group: root
-    mode: u=rw,g=r,o=r
+- name: Install lightdm apt package
+  apt:
+    name: lightdm
+    state: present
+  become: yes
+  become_method: sudo
+
+- name: Reconfigure dpkg
+  command: dpkg-reconfigure -f noninteractive lightdm
+  become: yes
+  become_method: sudo
