@@ -1,6 +1,6 @@
 # workstation-setup
-On a fresh [Ubuntu](https://www.ubuntu.com/#download) simply run (as root):
+On a fresh [Ubuntu](https://www.ubuntu.com/#download) simply run:
 ```bash
-apt install -y ansible git
-ansible-pull -U https://github.com/szymon-planeta/workstation-setup.git
+sudo apt install -y ansible git
+sudo ansible-pull -U https://github.com/szymon-planeta/workstation-setup.git
 ```
