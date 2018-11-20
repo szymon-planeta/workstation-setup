@@ -27,6 +27,14 @@
     group: root
     mode: u=rw,g=r,o=r
 
+- name: Copy slick-greeter.conf
+  copy:
+    src: slick-greeter.conf
+    dest: /etc/lightdm/slick-greeter.conf
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
+
 - name: Copy wallpaper
   copy:
     src: minimalist-city.jpg 
