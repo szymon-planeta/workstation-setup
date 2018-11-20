@@ -1,4 +1,4 @@
 - name: Create user planeta
   user: 
     name: planeta 
-    groups: planeta
+    groups: planeta adm cdrom sudo dip plugdev lpadmin sambashare
