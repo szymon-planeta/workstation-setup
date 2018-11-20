@@ -19,6 +19,14 @@
     group: root
     mode: u=rw,g=r,o=r
 
+- name: Copy lightdm.conf
+  copy:
+    src: lightdm.conf
+    dest: /etc/lightdm/lightdm.conf
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
+
 - name: Copy wallpaper
   copy:
     src: minimalist-city.jpg 
