@@ -1,5 +1,4 @@
 - name: Add apt repositories
-  become: true
   apt_repository:
     repo: "{{item}}"
     state: present
@@ -7,8 +6,19 @@
     - ppa:tista/adapta 
     - ppa:papirus/papirus 
 
+- name: Add packagecloud apt key (for gbt)
+  apt_key:
+    url: https://packagecloud.io/gbt/release/gpgkey
+  
+- name: Add gbt.list apt source list
+  copy:
+    src: gbt.list
+    dest: /etc/apt/sources.list.d/gbt.list
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
+
 - name: Update and upgrade apt packages
-  become: true
   apt:
     upgrade: yes
     update_cache: yes
@@ -27,8 +37,7 @@
     - adapta-backgrounds
     - adapta-gtk-theme
     - papirus-icon-theme   
-  become: yes
-  become_method: sudo
+    - gbt
 
 - name: Clone fzf repo
   git: 
