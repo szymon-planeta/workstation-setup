@@ -10,3 +10,11 @@
 
 - name: Reconfigure dpkg
   command: dpkg-reconfigure -f noninteractive lightdm
+
+- name: Copy 50-budgie.conf
+  copy:
+    src: 50-budgie.conf
+    dest: /etc/lightdm/lightdm.conf.d/50-budgie.conf
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
