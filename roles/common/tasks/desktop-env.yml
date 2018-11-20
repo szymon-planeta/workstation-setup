@@ -2,5 +2,11 @@
   apt:
     name: lightdm
     state: present
-  become: yes
-  become_method: sudo
+
+- name: Remove gdm3 apt package
+  apt:
+    name: gdm3
+    state: absent
+
+- name: Reconfigure dpkg
+  command: dpkg-reconfigure -f noninteractive lightdm
