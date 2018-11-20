@@ -4,11 +4,3 @@
     state: present
   become: yes
   become_method: sudo
-
-- name: Copy default-display-manager 
-  copy:
-    src: default-display-manager
-    dest: /etc/X11/default-display-manager
-    owner: root
-    group: root
-    mode: u=rw,g=r,o=r
