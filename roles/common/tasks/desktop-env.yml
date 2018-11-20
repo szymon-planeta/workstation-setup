@@ -18,3 +18,10 @@
     owner: root
     group: root
     mode: u=rw,g=r,o=r
+
+- name: Set gsettings
+  command: gsettings set "{{item}}"
+  with items:
+    - org.gnome.desktop.interface gtk-theme Adapta
+    - org.gnome.desktop.interface icon-theme Papirus
+    - org.gnome.desktop.wm.preferences theme Adapta
