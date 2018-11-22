@@ -1,7 +1,7 @@
 - name: Copy .bashrc
   copy:
-    src: .bashrc
-    dest: /home/{{ user }}/.bashrc
+    src: .zshrc
+    dest: /home/{{ user }}/.zshrc
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: u=rw,g=r,o=r
