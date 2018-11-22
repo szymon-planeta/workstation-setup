@@ -1,5 +1,5 @@
 ---
 - name: Deploy workstation configuration
-  hosts: local
+  hosts: planeta
   roles:
     - common
