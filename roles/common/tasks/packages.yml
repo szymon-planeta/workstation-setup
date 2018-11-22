@@ -50,6 +50,14 @@
     repo: https://github.com/junegunn/fzf.git 
     dest: /home/{{ user }}/.fzf
     depth: 1
+  become_user: "{{ user }}"
 
 - name: Install fzf
   command: /home/{{ user }}/.fzf/install --key-bindings --completion --no-update-rc
+
+- name: Install BitstreamVeraSansMono.zip
+  unarchive:
+    src: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/BitstreamVeraSansMono.zip
+    dest: /usr/local/share/fonts
+    remote_src: yes
+

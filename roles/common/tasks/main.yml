@@ -8,5 +8,8 @@
   become: true
   import_tasks: desktop-env.yml
 
+- name: Install tools
+  import_tasks: tools.yml
+
 - name: Copy config files
   import_tasks: configs.yml
