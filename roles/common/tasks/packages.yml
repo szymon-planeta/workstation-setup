@@ -44,7 +44,6 @@
     - adapta-gtk-theme
     - papirus-icon-theme   
     - gbt
-    - zsh
 
 - name: Clone fzf repo
   git: 

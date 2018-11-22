@@ -3,4 +3,4 @@
   user: 
     name: "{{ user }}"
     groups: "{{ user }},adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare"
-    shell: /usr/bin/zsh
+    shell: /bin/bash
