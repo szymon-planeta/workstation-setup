@@ -1,0 +1,5 @@
+---
+- name: Deploy workstation configuration
+  hosts: local
+  roles:
+    - common
