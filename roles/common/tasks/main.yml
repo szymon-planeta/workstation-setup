@@ -4,9 +4,9 @@
 - name: Install packages
   import_tasks: packages.yml
 
-- name: Configure apps
-  import_tasks: configs.yml
-
 - name: Configure desktop environment 
   become: true
   import_tasks: desktop-env.yml
+
+- name: Copy config files
+  import_tasks: configs.yml
