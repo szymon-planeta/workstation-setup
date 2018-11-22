@@ -1,15 +1,15 @@
 - name: Copy .bashrc
   copy:
     src: .bashrc
-    dest: /home/planeta/.bashrc
-    owner: planeta
-    group: planeta
+    dest: /home/{{ user }}/.bashrc
+    owner: "{{ user }}"
+    group: "{{ user }}"
     mode: u=rw,g=r,o=r
 
 - name: Copy .gitconfig
   copy:
     src: .gitconfig
-    dest: /home/planeta/.gitconfig
-    owner: planeta
-    group: planeta
+    dest: /home/{{ user }}/.gitconfig
+    owner: "{{ user }}"
+    group: "{{ user }}"
     mode: u=rw,g=r,o=r

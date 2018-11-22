@@ -1,4 +1,5 @@
-- name: Create user planeta
+- name: Create user {{ user }}
+  become: true
   user: 
-    name: planeta 
-    groups: planeta,adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare
+    name: "{{ user }}"
+    groups: "{{ user }},adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare"

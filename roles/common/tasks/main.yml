@@ -8,4 +8,5 @@
   import_tasks: configs.yml
 
 - name: Configure desktop environment 
+  become: true
   import_tasks: desktop-env.yml
