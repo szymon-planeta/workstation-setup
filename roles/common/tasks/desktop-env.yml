@@ -37,8 +37,8 @@
 
 - name: Copy wallpaper
   copy:
-    src: minimalist-city.jpg 
-    dest: /usr/share/backgrounds/minimalist-city.jpg
+    src: "{{ wallpaper }}"
+    dest: /usr/share/backgrounds/{{ wallpaper }}
     owner: root
     group: root
     mode: u=rw,g=r,o=r
@@ -49,4 +49,4 @@
     - org.gnome.desktop.interface gtk-theme Adapta
     - org.gnome.desktop.interface icon-theme Papirus
     - org.gnome.desktop.wm.preferences theme Adapta
-    - org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/minimalist-city.jpg
+    - org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/{{ wallpaper }}
