@@ -1,3 +1,6 @@
+stty -ixon
+bindkey -r "^S"
+
 # History
 HISTSIZE=12000
 SAVEHIST=10000
