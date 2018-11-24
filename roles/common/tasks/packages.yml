@@ -38,6 +38,7 @@
     - git
     - tmux
     - htop
+    - zsh
     - budgie-desktop-environment
     - slick-greeter
     - adapta-backgrounds
