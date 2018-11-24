@@ -1,5 +1,5 @@
 - name: Add apt repositories
-  become: true
+  become: yes
   apt_repository:
     repo: "{{ item }}"
     state: present
@@ -8,12 +8,12 @@
     - ppa:papirus/papirus 
 
 - name: Add packagecloud apt key (for gbt)
-  become: true
+  become: yes
   apt_key:
     url: https://packagecloud.io/gbt/release/gpgkey
   
 - name: Add gbt.list apt source list
-  become: true
+  become: yes
   copy:
     src: gbt.list
     dest: /etc/apt/sources.list.d/gbt.list
@@ -22,13 +22,13 @@
     mode: u=rw,g=r,o=r
 
 - name: Update and upgrade apt packages
-  become: true
+  become: yes
   apt:
     upgrade: yes
     update_cache: yes
 
 - name: Install apt packages
-  become: true
+  become: yes
   apt:
     name: "{{ item }}"
     state: present
@@ -39,6 +39,8 @@
     - tmux
     - htop
     - zsh
+    - make
+    - pkg-config
     - budgie-desktop-environment
     - slick-greeter
     - adapta-backgrounds
@@ -51,7 +53,6 @@
     repo: https://github.com/junegunn/fzf.git 
     dest: /home/{{ user }}/.fzf
     depth: 1
-  become_user: "{{ user }}"
 
 - name: Install fzf
   command: /home/{{ user }}/.fzf/install --key-bindings --completion --no-update-rc
@@ -59,6 +60,6 @@
 - name: Install BitstreamVeraSansMono.zip
   unarchive:
     src: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/BitstreamVeraSansMono.zip
-    dest: /usr/local/share/fonts
+    dest: /home/{{ user }}/.local/share/fonts
     remote_src: yes
 

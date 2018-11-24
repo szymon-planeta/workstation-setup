@@ -1,5 +1,5 @@
 - name: Create user {{ user }}
-  become: true
+  become: yes
   user: 
     name: "{{ user }}"
     groups: "{{ user }},adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare"

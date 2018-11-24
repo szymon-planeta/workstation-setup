@@ -1,6 +1,0 @@
-- name: Clone st repo
-  git: 
-    repo: git://git.suckless.org/st
-    dest: /home/{{ user }}/.st
-    depth: 1
-  become_user: "{{ user }}"
