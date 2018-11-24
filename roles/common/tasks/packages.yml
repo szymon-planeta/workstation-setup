@@ -58,7 +58,9 @@
   command: /home/{{ user }}/.fzf/install --key-bindings --completion --no-update-rc
 
 - name: Create fonts directory
-  file: path=/home/{{ user }}/.local/share/fonts state=directory
+  file: 
+    path: /home/{{ user }}/.local/share/fonts 
+    state: directory
  
 - name: Install BitstreamVeraSansMono.zip
   unarchive:
