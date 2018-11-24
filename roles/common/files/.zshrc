@@ -1,13 +1,23 @@
-setopt histignorealldups sharehistory
-setopt PROMPT_SUBST
+# History
+HISTSIZE=12000
+SAVEHIST=10000
+HISTFILE=~/.zsh_history
+
+setopt append_history
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_all_dups 
+setopt hist_ignore_space
+setopt inc_append_history
+setopt share_history
+
+# Prompt
+autoload -U promptinit
+promptinit
+setopt prompt_subst
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
-
-# Keep 10000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=10000
-SAVEHIST=10000
-HISTFILE=~/.zsh_history
 
 # Use modern completion system
 autoload -Uz compinit
