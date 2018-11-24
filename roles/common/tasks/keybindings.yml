@@ -9,3 +9,7 @@
     - org.gnome.desktop.wm.keybindings move-to-workspace-2 "['<Shift><Super>at']"
     - org.gnome.desktop.wm.keybindings move-to-workspace-3 "['<Shift><Super>numbersign']"
     - org.gnome.desktop.wm.keybindings move-to-workspace-4 "['<Shift><Super>dollar']"
+    - org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
+    - org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "gnome-terminal with tmux"
+    - org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "gnome-terminal -- tmux"
+    - org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "<Control><Alt>t"
