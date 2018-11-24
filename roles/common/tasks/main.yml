@@ -12,3 +12,6 @@
 
 - name: Copy config files
   import_tasks: configs.yml
+
+- name: Set wm keybindings
+  import_tasks: keybindings.yml
