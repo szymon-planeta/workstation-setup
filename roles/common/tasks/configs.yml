@@ -21,3 +21,17 @@
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: u=rw,g=r,o=r
+
+- name: Ensure gtk dir exists
+  file:
+    path: /home/{{ user }}/.config/gtk-3.0
+    state: directory
+    recurse: yes
+
+- name: Copy gtk3 settings
+  copy:
+    src: settings.ini
+    dest: /home/{{ user }}/.config/gtk-3.0/settings.ini
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: u=rw,g=r,o=r
