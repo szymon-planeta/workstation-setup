@@ -1,5 +1,4 @@
-export GBT__HOME='/usr/share/gbt'
-source "$GBT__HOME/sources/prompt_forwarding/local"
+# gbt
 alias docker='gbt_docker'
 alias mysql='gbt_mysql'
 alias screen='gbt_screen'
