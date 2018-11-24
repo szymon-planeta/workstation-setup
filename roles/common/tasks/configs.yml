@@ -21,12 +21,3 @@
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: u=rw,g=r,o=r
-
-- name: Copy terminal script
-  become: yes
-  copy:
-    src: terminal
-    dest: /usr/local/bin/terminal
-    owner: root
-    group: root
-    mode: u=rwx,g=rx,o=rx
