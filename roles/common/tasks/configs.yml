@@ -30,6 +30,14 @@
     group: "{{ user }}"
     mode: u=rw,g=r,o=r
 
+- name: Copy .vimrc
+  copy:
+    src: .vimrc
+    dest: /home/{{ user }}/.vimrc
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: u=rw,g=r,o=r
+
 - name: Ensure gtk dir exists
   file:
     path: /home/{{ user }}/.config/gtk-3.0
