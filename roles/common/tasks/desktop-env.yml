@@ -57,5 +57,5 @@
     dest: /home/{{ user }}/.dconf-configuration.ini
 
 - name: Load dconf
-  command: dconf load / < /home/{{ user }}/.dconf-configuration.ini
+  shell: dconf load / < /home/{{ user }}/.dconf-configuration.ini
 
