@@ -36,6 +36,7 @@
     - ansible
     - vim
     - git
+    - curl
     - tmux
     - xclip
     - htop
