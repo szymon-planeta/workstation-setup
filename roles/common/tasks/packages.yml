@@ -6,6 +6,7 @@
   with_items:
     - ppa:tista/adapta 
     - ppa:papirus/papirus 
+    - ppa:lazygit-team/release
 
 - name: Add packagecloud apt key (for gbt)
   become: yes
@@ -49,6 +50,7 @@
     - adapta-gtk-theme
     - papirus-icon-theme   
     - gbt
+    - lazygit
 
 - name: Clone fzf repo
   git: 
