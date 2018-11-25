@@ -51,6 +51,7 @@
     - papirus-icon-theme   
     - gbt
     - lazygit
+    - silversearcher-ag
 
 - name: Clone fzf repo
   git: 
