@@ -52,6 +52,7 @@
     - gbt
     - lazygit
     - silversearcher-ag
+    - ranger
 
 - name: Install bat
   become: yes

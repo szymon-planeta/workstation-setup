@@ -3,6 +3,7 @@ alias v='vim'
 alias py='python3'
 alias lg='lazygit'
 alias cat='bat'
+alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=$(cat $HOME/.rangerdir); cd "$LASTDIR"'
 
 # Cd
 alias ..='cd ..'
