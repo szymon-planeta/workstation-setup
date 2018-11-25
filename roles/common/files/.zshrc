@@ -1,5 +1,9 @@
 stty -ixon
 bindkey -r "^S"
+bindkey -r "^[h"
+bindkey -r "^[j"
+bindkey -r "^[k"
+bindkey -r "^[l"
 
 # History
 HISTSIZE=12000
