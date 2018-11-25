@@ -50,12 +50,12 @@
     group: root
     mode: u=rw,g=r,o=r
 
-- name: Set gsettings
-  command: gsettings set {{item}}
-  with_items:
-    - org.gnome.desktop.interface gtk-theme {{ theme }}
-    - org.gnome.desktop.interface icon-theme {{ icon_theme }} 
-    - org.gnome.desktop.wm.preferences theme {{ theme }}
-    - org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/{{ wallpaper }}
-    - org.gnome.desktop.screensaver picture-uri file:///usr/share/backgrounds/{{ wallpaper }}
-    - org.gnome.desktop.interface monospace-font-name '{{ monospace_font_name }} {{ monospace_font_size}}'
+# Dconf backup created with 'dconf dump / > dconf-configuration.ini'
+- name: Copy dconf-configuration.ini
+  copy:
+    src: dconf-configuration.ini
+    dest: /home/{{ user }}/.dconf-configuration.ini
+
+- name: Load dconf
+  command: dconf load / < /home/{{ user }}/.dconf-configuration.ini
+
