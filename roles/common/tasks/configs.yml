@@ -35,3 +35,18 @@
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: u=rw,g=r,o=r
+
+- name: Ensure budgie-desktop dir exists
+  file:
+    path: /home/{{ user }}/.config/budgie-desktop
+    state: directory
+    recurse: yes
+
+- name: Ensure budgie firstrun files exist
+  file:
+    path: /home/{{ user }}/.config/budgie-desktop/{{ item }}
+    state: touch
+  with_items:
+    - firstrun
+    - firstruncommon
+    - keycontrol2
