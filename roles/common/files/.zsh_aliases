@@ -1,4 +1,28 @@
-# gbt
+# Some tools aliases
+alias v='vim'
+alias py='python3'
+alias lg='lazygit'
+
+# Cd
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias .......='cd ../../../../../..'
+
+# Various ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias l.='ls -d .* --color=auto'
+alias ll.='ls -Al'
+alias ls='ls --color=auto'
+
+# Safe rm
+alias rm='rm -I'
+
+# Gbt
 alias docker='gbt_docker'
 alias mysql='gbt_mysql'
 alias screen='gbt_screen'

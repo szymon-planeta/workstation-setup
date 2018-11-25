@@ -6,6 +6,14 @@
     group: "{{ user }}"
     mode: u=rw,g=r,o=r
 
+- name: Copy .zsh_aliases
+  copy:
+    src: .zsh_aliases
+    dest: /home/{{ user }}/.zsh_aliases
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: u=rw,g=r,o=r
+
 - name: Copy .gitconfig
   copy:
     src: .gitconfig
