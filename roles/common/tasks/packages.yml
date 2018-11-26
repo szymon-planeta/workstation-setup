@@ -4,15 +4,15 @@
     repo: "{{ item }}"
     state: present
   with_items:
-    - ppa:tista/adapta 
-    - ppa:papirus/papirus 
+    - ppa:tista/adapta
+    - ppa:papirus/papirus
     - ppa:lazygit-team/release
 
 - name: Add packagecloud apt key (for gbt)
   become: yes
   apt_key:
     url: https://packagecloud.io/gbt/release/gpgkey
-  
+
 - name: Add gbt.list apt source list
   become: yes
   copy:
@@ -48,11 +48,12 @@
     - slick-greeter
     - adapta-backgrounds
     - adapta-gtk-theme
-    - papirus-icon-theme   
+    - papirus-icon-theme
     - gbt
     - lazygit
     - silversearcher-ag
     - ranger
+    - zsh-syntax-highlighting
 
 - name: Install bat
   become: yes
@@ -60,8 +61,8 @@
     deb: https://github.com/sharkdp/bat/releases/download/v0.9.0/bat_0.9.0_amd64.deb
 
 - name: Clone fzf repo
-  git: 
-    repo: https://github.com/junegunn/fzf.git 
+  git:
+    repo: https://github.com/junegunn/fzf.git
     dest: /home/{{ user }}/.fzf
     depth: 1
 
@@ -69,10 +70,10 @@
   command: /home/{{ user }}/.fzf/install --key-bindings --completion --no-update-rc
 
 - name: Create fonts directory
-  file: 
-    path: /home/{{ user }}/.local/share/fonts 
+  file:
+    path: /home/{{ user }}/.local/share/fonts
     state: directory
- 
+
 - name: Install BitstreamVeraSansMono.zip
   unarchive:
     src: https://github.com/ryanoasis/nerd-fonts/releases/download/v1.2.0/BitstreamVeraSansMono.zip

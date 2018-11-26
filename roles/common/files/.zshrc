@@ -61,3 +61,6 @@ export GBT__HOME='/usr/share/gbt'
 source "$GBT__HOME/sources/prompt_forwarding/local"
 
 export EDITOR='vim'
+
+zsh_syntax_file='/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
+[ -f "$zsh_syntax_file" ] && source "$zsh_syntax_file"
