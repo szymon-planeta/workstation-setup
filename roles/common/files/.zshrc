@@ -1,9 +1,4 @@
 stty -ixon
-bindkey -r "^S"
-bindkey -r "^[h"
-bindkey -r "^[j"
-bindkey -r "^[k"
-bindkey -r "^[l"
 
 # History
 HISTSIZE=12000
@@ -25,6 +20,11 @@ setopt prompt_subst
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
+bindkey -r "^S"
+bindkey -r "^[h"
+bindkey -r "^[j"
+bindkey -r "^[k"
+bindkey -r "^[l"
 
 # Use modern completion system
 autoload -Uz compinit
