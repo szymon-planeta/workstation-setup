@@ -89,7 +89,7 @@
 
 - name: Check if BitstreamVeraSansMono is installed
   stat:
-    path: '/home/planeta/.local/share/fonts/Bitstream Vera Sans Mono Nerd Font Complete.ttf'
+    path: '/home/{{ user }}/.local/share/fonts/Bitstream Vera Sans Mono Nerd Font Complete.ttf'
   register: font_check
   changed_when: false
 

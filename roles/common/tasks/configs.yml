@@ -58,6 +58,12 @@
     state: directory
     recurse: yes
 
+- name: Check if budgie firstrun file exists
+  stat:
+    path: /home/{{ user }}/.config/budgie-desktop/firstrun
+  register: firstrun_check
+  changed_when: false
+
 - name: Ensure budgie firstrun files exist
   file:
     path: /home/{{ user }}/.config/budgie-desktop/{{ item }}
@@ -66,3 +72,4 @@
     - firstrun
     - firstruncommon
     - keycontrol2
+  when: firstrun_check.stat.exists == False
