@@ -64,6 +64,7 @@
   shell: command -v bat >/dev/null 2>&1
   register: bat_check
   changed_when: false
+  failed_when: false
 
 - name: Install bat
   become: yes
@@ -75,7 +76,8 @@
   shell: command -v fzf >/dev/null 2>&1
   register: fzf_check
   changed_when: false
-
+  failed_when: false
+  
 - name: Clone fzf repo
   git:
     repo: https://github.com/junegunn/fzf.git
@@ -97,6 +99,7 @@
     path: '/home/{{ user }}/.local/share/fonts/Bitstream Vera Sans Mono Nerd Font Complete.ttf'
   register: font_check
   changed_when: false
+  failed_when: false
 
 - name: Install BitstreamVeraSansMono.zip
   unarchive:
@@ -120,6 +123,7 @@
   shell: command -v diff-so-fancy >/dev/null 2>&1
   register: diff_so_fancy_check
   changed_when: false
+  failed_when: false
 
 - name: Install diff-so-fancy
   become: yes
