@@ -7,6 +7,9 @@
 - name: Configure desktop environment
   import_tasks: desktop-env.yml
 
+- name: Configure dconf
+  import_tasks: dconf.yml
+
 - name: Install tools
   import_tasks: tools.yml
 

@@ -51,11 +51,10 @@
     mode: u=rw,g=r,o=r
 
 # Dconf backup created with 'dconf dump / > dconf-configuration.ini'
-- name: Copy dconf-configuration.ini
-  copy:
-    src: dconf-configuration.ini
-    dest: /home/{{ user }}/.dconf-configuration.ini
+#- name: Copy dconf-configuration.ini
+#  copy:
+#    src: dconf-configuration.ini
+#    dest: /home/{{ user }}/.dconf-configuration.ini
 
-- name: Load dconf
-  shell: dconf load / < /home/{{ user }}/.dconf-configuration.ini
-
+#- name: Load dconf
+#  shell: dconf load / < /home/{{ user }}/.dconf-configuration.ini

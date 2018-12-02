@@ -1,0 +1,564 @@
+- name: Install psutil
+  pip:
+    name: psutil
+  become: yes
+
+- name: Mounted volumes visible on desktop
+  dconf:
+    key: "/org/gnome/nautilus/desktop/volumes-visible"
+    value: "true"
+
+- name: Disable hotkeys
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/{{ item }}"
+    value: "''"
+  with_items:
+    - screenshot-clip
+    - area-screenshot-clip
+    - screenshot
+    - window-screenshot-clip
+    - screencast
+    - window-screenshot
+    - area-screenshot
+
+- name: Set custom-keybindings
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings"
+    value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-area-clipboard/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/windowshuffler/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-visualspace-right/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-files-test/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-window-clipboard/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-window/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-area/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-desktop/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-visualspace-left/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
+- name: Set Firefox keybinding hotkey
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding"
+    value: "'<Primary><Alt>f'"
+
+- name: Set Firefox keybinding command
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command"
+    value: "'firefox'"
+
+- name: Set Firefox keybinding name
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name"
+    value: "'Show Internet Browser'"
+
+- name: Set budgie-screenshot-window keybinding hotkey
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-window/binding"
+    value: "'<Alt>Print'"
+
+- name: Set budgie-screenshot-window keybinding command
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-window/command"
+    value: "'gnome-screenshot -w'"
+
+- name: Set budgie-screenshot-window keybinding name
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-window/name"
+    value: "'Save a screenshot of a window to Pictures'"
+
+- name: Set budgie-screenshot keybinding hotkey
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot/binding"
+    value: "'Print'"
+
+- name: Set budgie-screenshot keybinding command
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot/command"
+    value: "'gnome-screenshot'"
+
+- name: Set budgie-screenshot keybinding name
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot/name"
+    value: "'Save a screenshot to Pictures'"
+
+- name: Set budgie-visualspace-right keybinding hotkey
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-visualspace-right/binding"
+    value: "'<Control><Alt>Right'"
+
+- name: Set budgie-visualspace-right keybinding command
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-visualspace-right/command"
+    value: "'/usr/share/budgie-desktop/visualspace/visualspace next'"
+
+- name: Set budgie-visualspace-right keybinding name
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-visualspace-right/name"
+    value: "'Move to Workspace right'"
+
+- name: Set budgie-visualspace-left keybinding hotkey
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-visualspace-left/binding"
+    value: "'<Control><Alt>Left'"
+
+- name: Set budgie-visualspace-left keybinding command
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-visualspace-left/command"
+    value: "'/usr/share/budgie-desktop/visualspace/visualspace prev'"
+
+- name: Set budgie-visualspace-left keybinding name
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-visualspace-left/name"
+    value: "'Move to Workspace left'"
+
+- name: Set budgie-screenshot-area keybinding hotkey
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-area/binding"
+    value: "'<Shift>Print'"
+
+- name: Set budgie-screenshot-area keybinding command
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-area/command"
+    value: "'gnome-screenshot -a'"
+
+- name: Set budgie-screenshot-area keybinding name
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-area/name"
+    value: "'Save a screenshot of an area to Pictures'"
+
+- name: Set budgie-screenshot-window-clipboard keybinding hotkey
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-window-clipboard/binding"
+    value: "'<Ctrl>Print'"
+
+- name: Set budgie-screenshot-window-clipboard keybinding command
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-window-clipboard/command"
+    value: "'gnome-screenshot -w -c'"
+
+- name: Set budgie-screenshot-window-clipboard keybinding name
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-window-clipboard/name"
+    value: "'Copy a screenshot of a window to clipboard'"
+
+- name: Set budgie-show-files-test keybinding hotkey
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-files-test/binding"
+    value: "'<Primary><Alt>e'"
+
+- name: Set budgie-show-files-test keybinding command
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-files-test/command"
+    value: "'nautilus --new-window %U'"
+
+- name: Set budgie-show-files-test keybinding name
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-files-test/name"
+    value: "'Show File Browser'"
+
+- name: Set windowshuffler keybinding hotkey
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/windowshuffler/binding"
+    value: "'<Super>s'"
+
+- name: Set windowshuffler keybinding command
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/windowshuffler/command"
+    value: "'/usr/share/budgie-desktop/windowshuffler/matrix_wrapper'"
+
+- name: Set windowshuffler keybinding name
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/windowshuffler/name"
+    value: "'Toggle Window Shuffler'"
+
+- name: Set budgie-screenshot-area-clipboard keybinding hotkey
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-area-clipboard/binding"
+    value: "'<Shift><Ctrl>Print'"
+
+- name: Set budgie-screenshot-area-clipboard keybinding command
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-area-clipboard/command"
+    value: "'gnome-screenshot -a -c'"
+
+- name: Set budgie-screenshot-area-clipboard keybinding name
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-area-clipboard/name"
+    value: "'Copy a screenshot of an area to clipboard'"
+
+- name: Set xsettings
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/xsettings/overrides"
+    value: "{'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'menu:   minimize,maximize,close'>}"
+
+- name: Numlock on
+  dconf:
+    key: "/org/gnome/settings-daemon/peripherals/keyboard/numlock-state"
+    value: "'on'"
+
+- name: Desktop interface clock-show-date
+  dconf:
+    key: "/org/gnome/desktop/interface/clock-show-date"
+    value: "true"
+
+- name: Desktop interface monospace-font-name
+  dconf:
+    key: "/org/gnome/desktop/interface/monospace-font-name"
+    value: "'BitstreamVeraSansMono Nerd Font Roman 11'"
+
+- name: Desktop interface gtk-im-module
+  dconf:
+    key: "/org/gnome/desktop/interface/gtk-im-module"
+    value: "'gtk-im-context-simple'"
+
+- name: Desktop interface show-battery-percentage
+  dconf:
+    key: "/org/gnome/desktop/interface/show-battery-percentage"
+    value: "true"
+
+- name: Desktop interface cursor-theme
+  dconf:
+    key: "/org/gnome/desktop/interface/cursor-theme"
+    value: "'DMZ-White'"
+
+- name: Desktop interface gtk-theme
+  dconf:
+    key: "/org/gnome/desktop/interface/gtk-theme"
+    value: "'Adapta'"
+
+- name: Desktop interface icon-theme
+  dconf:
+    key: "/org/gnome/desktop/interface/icon-theme"
+    value: "'Papirus'"
+
+- name: Terminal command
+  dconf:
+    key: "/org/gnome/desktop/applications/terminal/exec"
+    value: "'gnome-terminal --maximize -- tmux'"
+
+- name: Screensaver
+  dconf:
+    key: "/org/gnome/desktop/screensaver/picture-uri"
+    value: "'file:///usr/share/backgrounds/{{ wallpaper }}'"
+
+- name: Set theme
+  dconf:
+    key: "/org/gnome/desktop/wm/preferences/theme"
+    value: "'Adapta'"
+
+- name: Set keybinding switch-to-workspace-1
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-1"
+    value: "['<Super>1']"
+
+- name: Set keybinding switch-to-workspace-2
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-2"
+    value: "['<Super>2']"
+
+- name: Set keybinding switch-to-workspace-3
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-3"
+    value: "['<Super>3']"
+
+- name: Set keybinding switch-to-workspace-4
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-4"
+    value: "['<Super>4']"
+
+- name: Set keybinding move-to-workspace-1
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-1"
+    value: "['<Shift><Super>exclam']"
+
+- name: Set keybinding move-to-workspace-2
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-2"
+    value: "['<Shift><Super>at']"
+
+- name: Set keybinding move-to-workspace-3
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-3"
+    value: "['<Shift><Super>numbersign']"
+
+- name: Set keybinding move-to-workspace-4
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-4"
+    value: "['<Shift><Super>dollar']"
+
+- name: Unbind some keys
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/{{ item }}"
+    value: "['']"
+  with_items:
+    - show-desktop
+    - switch-to-workspace-left
+    - switch-to-workspace-right
+
+- name: Set background
+  dconf:
+    key: "/org/gnome/desktop/background/picture-uri"
+    value: "'file:///usr/share/backgrounds/{{ wallpaper }}'"
+
+- name: Set pl input source
+  dconf:
+    key: "/org/gnome/desktop/input-sources/sources"
+    value: "[('xkb', 'pl')]"
+
+- name: Disable gnome-terminal keybindings
+  dconf:
+    key: "/org/gnome/terminal/legacy/keybindings/{{ item }}"
+    value: "'disabled'"
+  with_items:
+    - new-tab
+    - switch-to-tab-1
+    - switch-to-tab-2
+    - switch-to-tab-3
+    - switch-to-tab-4
+    - switch-to-tab-5
+    - switch-to-tab-6
+    - switch-to-tab-7
+    - switch-to-tab-8
+    - switch-to-tab-9
+    - switch-to-tab-10
+    - find-previous
+    - prev-tab
+    - new-window
+    - close-tab
+    - find
+    - full-screen
+    - close-window
+    - move-tab-left
+    - find-next
+    - move-tab-right
+    - find-clear
+    - next-tab
+
+- name: Disable terminal menu accelerator
+  dconf:
+    key: "/org/gnome/terminal/legacy/menu-accelerator-enabled"
+    value: "false"
+
+- name: Terminal background color
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/background-color"
+    value: "'rgb(38,38,38)'"
+
+- name: Terminal dont use theme colors
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/use-theme-colors"
+    value: "false"
+
+- name: Terminal visible name
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/visible-name"
+    value: "'planeta'"
+
+- name: Budgie panel migration level
+  dconf:
+    key: "/com/solus-project/budgie-panel/migration-level"
+    value: "1"
+
+- name: Budgie panel panels
+  dconf:
+    key: "/com/solus-project/budgie-panel/panels"
+    value: "['ed74ace0-f0c1-11e8-96b2-0800275eda49']"
+
+- name: Budgie panel settings size
+  dconf:
+    key: "/com/solus-project/budgie-panel/panels/{ed74ace0-f0c1-11e8-96b2-0800275eda49}/size"
+    value: "39"
+
+- name: Budgie panel settings dock-mode
+  dconf:
+    key: "/com/solus-project/budgie-panel/panels/{ed74ace0-f0c1-11e8-96b2-0800275eda49}/dock-mode"
+    value: "false"
+
+- name: Budgie panel settings enable-shadow
+  dconf:
+    key: "/com/solus-project/budgie-panel/panels/{ed74ace0-f0c1-11e8-96b2-0800275eda49}/enable-shadow"
+    value: "false"
+
+- name: Budgie panel settings applets
+  dconf:
+    key: "/com/solus-project/budgie-panel/panels/{ed74ace0-f0c1-11e8-96b2-0800275eda49}/applets"
+    value: "['a711df60-f0c2-11e8-96b2-0800275eda49', 'ed74ace6-f0c1-11e8-96b2-0800275eda49', 'ed74acf1-f0c1-11e8-96b2-0800275eda49', 'e03851d6-f656-11e8-b54c-3c970e123ecc', '4400f810-f0c3-11e8-96b2-0800275eda49', '7fadd022-f0c3-11e8-96b2-0800275eda49', 'c85c8b36-f656-11e8-b54c-3c970e123ecc', 'db2f4030-f0c2-11e8-96b2-0800275eda49', 'ed74ace1-f0c1-11e8-96b2-0800275eda49', 'a772171c-f0c3-11e8-96b2-0800275eda49', '8ca75424-f0c3-11e8-96b2-0800275eda49']"
+
+- name: Budgie panel settings transparency
+  dconf:
+    key: "/com/solus-project/budgie-panel/panels/{ed74ace0-f0c1-11e8-96b2-0800275eda49}/transparency"
+    value: "'always'"
+
+- name: Budgie panel settings location
+  dconf:
+    key: "/com/solus-project/budgie-panel/panels/{ed74ace0-f0c1-11e8-96b2-0800275eda49}/location"
+    value: "'bottom'"
+
+- name: Budgie panel settings theme-regions
+  dconf:
+    key: "/com/solus-project/budgie-panel/panels/{ed74ace0-f0c1-11e8-96b2-0800275eda49}/theme-regions"
+    value: "false"
+
+- name: Pinned launchers
+  dconf:
+    key: "/com/solus-project/budgie-panel/instance/icon-tasklist/{db2f4030-f0c2-11e8-96b2-0800275eda49}/pinned-launchers"
+    value: "['']"
+
+- name: Applet sep1 position
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{7fadd022-f0c3-11e8-96b2-0800275eda49}/position"
+    value: "2"
+
+- name: Applet sep1 alignment
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{7fadd022-f0c3-11e8-96b2-0800275eda49}/alignment"
+    value: "'end'"
+
+- name: Applet sep1 name
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{7fadd022-f0c3-11e8-96b2-0800275eda49}/name"
+    value: "'Separator'"
+
+- name: Applet sep2 position
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{a772171c-f0c3-11e8-96b2-0800275eda49}/position"
+    value: "6"
+
+- name: Applet sep2 alignment
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{a772171c-f0c3-11e8-96b2-0800275eda49}/alignment"
+    value: "'end'"
+
+- name: Applet sep2 name
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{a772171c-f0c3-11e8-96b2-0800275eda49}/name"
+    value: "'Separator'"
+
+- name: Applet system tray position
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{ed74ace6-f0c1-11e8-96b2-0800275eda49}/position"
+    value: "0"
+
+- name: Applet system tray alignment
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{ed74ace6-f0c1-11e8-96b2-0800275eda49}/alignment"
+    value: "'end'"
+
+- name: Applet system tray name
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{ed74ace6-f0c1-11e8-96b2-0800275eda49}/name"
+    value: "'System Tray'"
+
+- name: Applet workspace switcher position
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{c85c8b36-f656-11e8-b54c-3c970e123ecc}/position"
+    value: "0"
+
+- name: Applet workspace switcher alignment
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{c85c8b36-f656-11e8-b54c-3c970e123ecc}/alignment"
+    value: "'center'"
+
+- name: Applet workspace switcher name
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{c85c8b36-f656-11e8-b54c-3c970e123ecc}/name"
+    value: "'Workspace Switcher'"
+
+- name: Applet clock position
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{a711df60-f0c2-11e8-96b2-0800275eda49}/position"
+    value: "3"
+
+- name: Applet clock alignment
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{a711df60-f0c2-11e8-96b2-0800275eda49}/alignment"
+    value: "'end'"
+
+- name: Applet clock name
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{a711df60-f0c2-11e8-96b2-0800275eda49}/name"
+    value: "'Clock'"
+
+- name: Applet sep3 position
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{8ca75424-f0c3-11e8-96b2-0800275eda49}/position"
+    value: "4"
+
+- name: Applet sep3 alignment
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{8ca75424-f0c3-11e8-96b2-0800275eda49}/alignment"
+    value: "'end'"
+
+- name: Applet sep3 name
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{8ca75424-f0c3-11e8-96b2-0800275eda49}/name"
+    value: "'Separator'"
+
+- name: Applet status indicator position
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{e03851d6-f656-11e8-b54c-3c970e123ecc}/position"
+    value: "1"
+
+- name: Applet status indicator alignment
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{e03851d6-f656-11e8-b54c-3c970e123ecc}/alignment"
+    value: "'end'"
+
+- name: Applet status indicator name
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{e03851d6-f656-11e8-b54c-3c970e123ecc}/name"
+    value: "'Status Indicator'"
+
+- name: Applet icon list position
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{db2f4030-f0c2-11e8-96b2-0800275eda49}/position"
+    value: "1"
+
+- name: Applet icon list alignment
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{db2f4030-f0c2-11e8-96b2-0800275eda49}/alignment"
+    value: "'start'"
+
+- name: Applet icon list name
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{db2f4030-f0c2-11e8-96b2-0800275eda49}/name"
+    value: "'Icon Task List'"
+
+- name: Applet user indicator position
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{4400f810-f0c3-11e8-96b2-0800275eda49}/position"
+    value: "9"
+
+- name: Applet user indicator alignment
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{4400f810-f0c3-11e8-96b2-0800275eda49}/alignment"
+    value: "'end'"
+
+- name: Applet user indicator name
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{4400f810-f0c3-11e8-96b2-0800275eda49}/name"
+    value: "'User Indicator'"
+
+- name: Applet raven trigger position
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{ed74acf1-f0c1-11e8-96b2-0800275eda49}/position"
+    value: "5"
+
+- name: Applet raven trigger alignment
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{ed74acf1-f0c1-11e8-96b2-0800275eda49}/alignment"
+    value: "'end'"
+
+- name: Applet raven trigger name
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{ed74acf1-f0c1-11e8-96b2-0800275eda49}/name"
+    value: "'Raven Trigger'"
+
+- name: Applet budgie menu position
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{ed74ace1-f0c1-11e8-96b2-0800275eda49}/position"
+    value: "0"
+
+- name: Applet budgie menu alignment
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{ed74ace1-f0c1-11e8-96b2-0800275eda49}/alignment"
+    value: "'start'"
+
+- name: Applet budgie menu name
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{ed74ace1-f0c1-11e8-96b2-0800275eda49}/name"
+    value: "'Budgie Menu'"
+
+- name: Budgie wm button layout
+  dconf:
+    key: "/com/solus-project/budgie-wm/button-layout"
+    value: "'appmenu:minimize,maximize,close'"
