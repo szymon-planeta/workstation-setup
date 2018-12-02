@@ -4,7 +4,7 @@
 - name: Install packages
   import_tasks: packages.yml
 
-- name: Configure desktop environment 
+- name: Configure desktop environment
   import_tasks: desktop-env.yml
 
 - name: Install tools
