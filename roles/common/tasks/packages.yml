@@ -87,11 +87,18 @@
     path: /home/{{ user }}/.local/share/fonts
     state: directory
 
+- name: Check if BitstreamVeraSansMono is installed
+  stat:
+    path: '/home/planeta/.local/share/fonts/Bitstream Vera Sans Mono Nerd Font Complete.ttf'
+  register: font_check
+  changed_when: false
+
 - name: Install BitstreamVeraSansMono.zip
   unarchive:
     src: https://github.com/ryanoasis/nerd-fonts/releases/download/v1.2.0/BitstreamVeraSansMono.zip
     dest: /home/{{ user }}/.local/share/fonts
     remote_src: yes
+  when: font_check.stat.exists == False
 
     #- name: Clone gotop repo
     #  become: yes
