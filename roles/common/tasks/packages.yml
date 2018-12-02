@@ -80,16 +80,16 @@
     dest: /home/{{ user }}/.local/share/fonts
     remote_src: yes
 
-- name: Clone gotop repo
-  become: yes
-  git:
-    repo: https://github.com/cjbassi/gotop
-    dest: /tmp/gotop
-    depth: 1
-
-- name: Install gotop
-  become: yes
-  shell: /tmp/gotop/scripts/download.sh && mv gotop /usr/local/bin
+    #- name: Clone gotop repo
+    #  become: yes
+    #  git:
+    #    repo: https://github.com/cjbassi/gotop
+    #    dest: /tmp/gotop
+    #    depth: 1
+    #
+    #- name: Install gotop
+    #  become: yes
+    #  shell: /tmp/gotop/scripts/download.sh && mv gotop /usr/local/bin
 
 - name: Install diff-so-fancy
   become: yes
