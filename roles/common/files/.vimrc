@@ -133,6 +133,15 @@ set foldcolumn=1
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 nnoremap <F3> :set list!<CR>
 
+" Navigation, splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+set splitbelow
+set splitright
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -307,6 +316,18 @@ if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => netrw
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let g:netrw_browse_split = 3
+let g:netrw_altv = 1
+let g:netrw_winsize = 15
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * :Vexplore
+augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
