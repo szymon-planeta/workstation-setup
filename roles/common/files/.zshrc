@@ -8,7 +8,7 @@ HISTFILE=~/.zsh_history
 setopt append_history
 setopt extended_history
 setopt hist_expire_dups_first
-setopt hist_ignore_all_dups 
+setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt inc_append_history
 setopt share_history
@@ -53,6 +53,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 PROMPT='$(gbt $?)'
+export GBT_CARS='Status, Dir, Git, Sign'
 export GBT_CAR_SIGN_SYMBOL_FM='none'
 export GBT_CAR_SIGN_USER_FM='none'
 export GBT_CAR_SIGN_ADMIN_FM='none'
