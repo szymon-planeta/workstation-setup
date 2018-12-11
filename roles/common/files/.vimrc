@@ -122,9 +122,16 @@ if has("gui_macvim")
     autocmd GUIEnter * set vb t_vb=
 endif
 
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
 
 " Add a bit extra margin to the left
 set foldcolumn=1
+
+" Show listchars
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+nnoremap <F3> :set list!<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
