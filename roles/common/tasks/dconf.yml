@@ -28,7 +28,7 @@
 - name: Set web keybinding hotkey
   dconf:
     key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding"
-    value: "'<Primary><Alt>;'"
+    value: "'<Primary><Alt>bracketright'"
 
 - name: Set web browser keybinding command
   dconf:
@@ -43,7 +43,7 @@
 - name: Set terminal hotkey
   dconf:
     key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding"
-    value: "'<Primary><Alt>['"
+    value: "'<Primary><Alt>bracketleft'"
 
 - name: Set terminal keybinding command
   dconf:
@@ -58,7 +58,7 @@
 - name: Set nautilus hotkey
   dconf:
     key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/binding"
-    value: "'<Primary><Alt>.'"
+    value: "'<Primary><Alt>period'"
 
 - name: Set nautilus keybinding command
   dconf:
