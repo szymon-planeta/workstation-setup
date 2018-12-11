@@ -28,7 +28,7 @@
 - name: Set web keybinding hotkey
   dconf:
     key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding"
-    value: "'<Primary><Alt>f'"
+    value: "'<Primary><Alt>;'"
 
 - name: Set web browser keybinding command
   dconf:
@@ -58,7 +58,7 @@
 - name: Set nautilus hotkey
   dconf:
     key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/binding"
-    value: "'<Primary><Alt>]'"
+    value: "'<Primary><Alt>.'"
 
 - name: Set nautilus keybinding command
   dconf:
