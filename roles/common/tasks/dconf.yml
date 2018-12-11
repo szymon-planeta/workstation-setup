@@ -28,7 +28,7 @@
 - name: Set web keybinding hotkey
   dconf:
     key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding"
-    value: "'<Primary><Alt>bracketright'"
+    value: "'<Primary><Alt>f'"
 
 - name: Set web browser keybinding command
   dconf:
@@ -39,36 +39,6 @@
   dconf:
     key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name"
     value: "'Show Internet Browser'"
-
-- name: Set terminal hotkey
-  dconf:
-    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding"
-    value: "'<Primary><Alt>bracketleft'"
-
-- name: Set terminal keybinding command
-  dconf:
-    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command"
-    value: "'gnome-terminal --maximize -- tmux'"
-
-- name: Set terminal keybinding name
-  dconf:
-    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name"
-    value: "'Start terminal with tmux'"
-
-- name: Set nautilus hotkey
-  dconf:
-    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/binding"
-    value: "'<Primary><Alt>period'"
-
-- name: Set nautilus keybinding command
-  dconf:
-    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/command"
-    value: "'nautilus'"
-
-- name: Set nautilus name
-  dconf:
-    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/name"
-    value: "'Start nautilus'"
 
 - name: Set budgie-screenshot-window keybinding hotkey
   dconf:
