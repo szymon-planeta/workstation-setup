@@ -60,6 +60,7 @@
     - python-pip
     - python3-dev
     - python3-pip
+    - python3-venv
     - unity-settings-daemon
 
 - name: Check if bat is installed
