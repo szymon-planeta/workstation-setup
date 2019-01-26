@@ -1,31 +1,4 @@
-- name: Check if bat is installed
-  shell: command -v bat >/dev/null 2>&1
-  register: bat_check
-  changed_when: false
-  failed_when: false
 
-- name: Install bat
-  become: yes
-  apt:
-    deb: https://github.com/sharkdp/bat/releases/download/v0.9.0/bat_0.9.0_amd64.deb
-  when: bat_check.rc != 0
-
-- name: Check if fzf is installed
-  shell: command -v fzf >/dev/null 2>&1
-  register: fzf_check
-  changed_when: false
-  failed_when: false
-  
-- name: Clone fzf repo
-  git:
-    repo: https://github.com/junegunn/fzf.git
-    dest: /home/{{ user }}/.fzf
-    depth: 1
-  when: fzf_check.rc != 0
-
-- name: Install fzf
-  command: /home/{{ user }}/.fzf/install --key-bindings --completion --no-update-rc
-  when: fzf_check.rc != 0
 
 - name: Create fonts directory
   file:
@@ -57,16 +30,3 @@
     #  become: yes
     #  shell: /tmp/gotop/scripts/download.sh && mv gotop /usr/local/bin
     #
-- name: Check if diff-so-fancy is installed
-  shell: command -v diff-so-fancy >/dev/null 2>&1
-  register: diff_so_fancy_check
-  changed_when: false
-  failed_when: false
-
-- name: Install diff-so-fancy
-  become: yes
-  get_url:
-    url: https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy
-    dest: /usr/local/bin/diff-so-fancy
-    mode: 0755
-  when: diff_so_fancy_check.rc != 0

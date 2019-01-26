@@ -4,4 +4,5 @@
   roles:
     - user
     - apt-packages
+    - apps
     - common

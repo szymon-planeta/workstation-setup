@@ -1,0 +1,16 @@
+- name: Check if fzf is installed
+  shell: command -v fzf >/dev/null 2>&1
+  register: fzf_check
+  changed_when: false
+  failed_when: false
+
+- name: Clone fzf repo
+  git:
+    repo: https://github.com/junegunn/fzf.git
+    dest: /home/{{ user }}/.fzf
+    depth: 1
+  when: fzf_check.rc != 0
+
+- name: Install fzf
+  command: /home/{{ user }}/.fzf/install --key-bindings --completion --no-update-rc
+  when: fzf_check.rc != 0
