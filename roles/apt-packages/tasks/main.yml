@@ -1,0 +1,64 @@
+- name: Add apt repositories
+  become: yes
+  apt_repository:
+    repo: "{{ item }}"
+    state: present
+  with_items:
+    - ppa:tista/adapta
+    - ppa:papirus/papirus
+    - ppa:lazygit-team/release
+    - ppa:unity7maintainers/unity7-desktop
+
+- name: Add packagecloud apt key (for gbt)
+  become: yes
+  apt_key:
+    url: https://packagecloud.io/gbt/release/gpgkey
+
+- name: Add gbt.list apt source list
+  become: yes
+  copy:
+    src: gbt.list
+    dest: /etc/apt/sources.list.d/gbt.list
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
+
+- name: Update and upgrade apt packages
+  become: yes
+  apt:
+    upgrade: yes
+    update_cache: yes
+
+- name: Install apt packages
+  become: yes
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - ansible
+    - vim
+    - git
+    - curl
+    - tmux
+    - xclip
+    - htop
+    - zsh
+    - make
+    - pkg-config
+    - budgie-desktop-environment
+    - slick-greeter
+    - adapta-backgrounds
+    - adapta-gtk-theme
+    - papirus-icon-theme
+    - gbt
+    - lazygit
+    - silversearcher-ag
+    - ranger
+    - zsh-syntax-highlighting
+    - gcc
+    - python-dev
+    - python-pip
+    - python3-dev
+    - python3-pip
+    - python3-venv
+    - unity-settings-daemon
