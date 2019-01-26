@@ -1,0 +1,2 @@
+- name: Fonts
+  import_tasks: fonts.yml

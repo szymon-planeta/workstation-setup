@@ -5,4 +5,5 @@
     - user
     - apt-packages
     - apps
+    - desktop-env
     - common
