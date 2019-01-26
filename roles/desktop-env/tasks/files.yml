@@ -1,0 +1,35 @@
+- name: Copy 50-budgie.conf
+  become: yes
+  copy:
+    src: 50-budgie.conf
+    dest: /etc/lightdm/lightdm.conf.d/50-budgie.conf
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
+
+- name: Copy lightdm.conf
+  become: yes
+  copy:
+    src: lightdm.conf
+    dest: /etc/lightdm/lightdm.conf
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
+
+- name: Copy slick-greeter.conf
+  become: yes
+  copy:
+    src: slick-greeter.conf
+    dest: /etc/lightdm/slick-greeter.conf
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
+
+- name: Copy wallpaper
+  become: yes
+  copy:
+    src: "{{ wallpaper }}"
+    dest: /usr/share/backgrounds/{{ wallpaper }}
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
