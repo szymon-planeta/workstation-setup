@@ -1,0 +1,123 @@
+- name: Disable hotkeys
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/{{ item }}"
+    value: "''"
+  with_items:
+    - screenshot-clip
+    - area-screenshot-clip
+    - screenshot
+    - window-screenshot-clip
+    - screencast
+    - window-screenshot
+    - area-screenshot
+
+- name: Set custom-keybindings
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings"
+    value: "{{ custom_keybindings }}"
+
+- name: Set web keybinding hotkey
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding"
+    value: "{{ web_keybinding }}"
+
+- name: Set web browser keybinding command
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command"
+    value: "{{ web_command }}"
+
+- name: Set web browser keybinding name
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name"
+    value: "{{ web_name }}"
+
+- name: Set budgie-screenshot keybinding hotkey
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot/binding"
+    value: "{{ budgie_screenshot_keybinding }}"
+
+- name: Set budgie-screenshot keybinding command
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot/command"
+    value: "{{ budgie_screenshot_command }}"
+
+- name: Set budgie-screenshot keybinding name
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot/name"
+    value: "{{ budgie_screenshot_name }}"
+
+- name: Set budgie-screenshot-window keybinding hotkey
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-window/binding"
+    value: "{{ budgie_screenshot_window_keybinding }}"
+
+- name: Set budgie-screenshot-window keybinding command
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-window/command"
+    value: "{{ budgie_screenshot_window_command }}"
+
+- name: Set budgie-screenshot-window keybinding name
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-window/name"
+    value: "{{ budgie_screenshot_window_name }}"
+
+- name: Set budgie-screenshot-area keybinding hotkey
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-area/binding"
+    value: "{{ budgie_screenshot_area_keybinding }}"
+
+- name: Set budgie-screenshot-area keybinding command
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-area/command"
+    value: "{{ budgie_screenshot_area_command }}"
+
+- name: Set budgie-screenshot-area keybinding name
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-area/name"
+    value: "{{ budgie_screenshot_area_name }}"
+
+- name: Set budgie-visualspace-right keybinding hotkey
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-visualspace-right/binding"
+    value: "{{ budgie_visualspace_right_keybinding }}"
+
+- name: Set budgie-visualspace-right keybinding command
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-visualspace-right/command"
+    value: "{{ budgie_visualspace_right_command }}"
+
+- name: Set budgie-visualspace-right keybinding name
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-visualspace-right/name"
+    value: "{{ budgie_visualspace_right_name }}"
+
+- name: Set budgie-visualspace-left keybinding hotkey
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-visualspace-left/binding"
+    value: "{{ budgie_visualspace_left_keybinding }}"
+
+- name: Set budgie-visualspace-left keybinding command
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-visualspace-left/command"
+    value: "{{ budgie_visualspace_left_command }}"
+
+- name: Set budgie-visualspace-left keybinding name
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-visualspace-left/name"
+    value: "{{ budgie_visualspace_left_name }}"
+
+- name: Set budgie-show-files-test keybinding hotkey
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-files-test/binding"
+    value: "{{ file_explorer_keybinding }}"
+
+- name: Set budgie-show-files-test keybinding command
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-files-test/command"
+    value: "{{ file_explorer_command }}"
+
+- name: Set budgie-show-files-test keybinding name
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-files-test/name"
+    value: "{{ file_explorer_name }}"
+

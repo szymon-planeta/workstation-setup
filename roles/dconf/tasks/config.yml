@@ -1,0 +1,4 @@
+- name: Mounted volumes visible on desktop
+  dconf:
+    key: "/org/gnome/nautilus/desktop/volumes-visible"
+    value: "true"

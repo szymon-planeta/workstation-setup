@@ -6,4 +6,5 @@
     - apt-packages
     - apps
     - desktop-env
+    - dconf
     - common

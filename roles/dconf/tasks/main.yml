@@ -1,0 +1,8 @@
+- name: psutil
+  import_tasks: psutil.yml
+
+- name: dconf config
+  import_tasks: config.yml
+
+- name: keybindings
+  import_tasks: keybindings.yml

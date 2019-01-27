@@ -1,0 +1,29 @@
+custom_keybindings: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-area-clipboard/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/windowshuffler/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-visualspace-right/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-files-test/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-window-clipboard/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-window/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-area/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-desktop/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-visualspace-left/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
+
+web_keybinding: "'<Primary><Alt>f'"
+web_command: "'google-chrome'"
+web_name: "'Show Internet Browser'"
+
+budgie_screenshot_keybinding: "'Print'"
+budgie_screenshot_command: "'gnome-screenshot'"
+budgie_screenshot_name: "'Save a screenshot to Pictures'"
+
+budgie_screenshot_window_keybinding: "'<Alt>Print'"
+budgie_screenshot_window_command: "'gnome-screenshot -w'"
+budgie_screenshot_window_name: "'Save a screenshot of a window to Pictures'"
+
+budgie_screenshot_area_keybinding: "'<Shift>Print'"
+budgie_screenshot_area_command: "'gnome-screenshot -a'"
+budgie_screenshot_area_name: "'Save a screenshot of an area to Pictures'"
+
+budgie_visualspace_right_keybinding: "'<Control><Alt>Right'"
+budgie_visualspace_right_command: "'/usr/share/budgie-desktop/visualspace/visualspace next'"
+budgie_visualspace_right_name: "'Move to Workspace right'"
+
+budgie_visualspace_left_keybinding: "'<Control><Alt>Left'"
+budgie_visualspace_left_command: "'/usr/share/budgie-desktop/visualspace/visualspace prev'"
+budgie_visualspace_left_name: "'Move to Workspace left'"
+
+file_explorer_keybinding: "'<Primary><Alt>e'"
+file_explorer_command: "'nautilus --new-window %U'"
+file_explorer_name: "'Show File Browser'"

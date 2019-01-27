@@ -1,0 +1,5 @@
+- name: Install psutil
+  pip:
+    name: psutil
+  become: yes
+
