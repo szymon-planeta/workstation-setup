@@ -1,0 +1,8 @@
+- name: Fonts
+  import_tasks: fonts.yml
+
+- name: Desktop env apps
+  import_tasks: apps.yml
+
+- name: Copy files
+  import_tasks: files.yml

@@ -2,4 +2,9 @@
 - name: Deploy workstation configuration
   hosts: localhost
   roles:
-    - common
+    - user
+    - apt-packages
+    - apps
+    - desktop-env
+    - dconf
+    - configs

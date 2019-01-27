@@ -1,0 +1,8 @@
+- name: bat
+  import_tasks: bat.yml
+
+- name: fzf
+  import_tasks: fzf.yml
+
+- name: diff-so-fancy
+  import_tasks: diff-so-fancy.yml

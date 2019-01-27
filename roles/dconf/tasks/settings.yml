@@ -1,0 +1,310 @@
+- name: Set xsettings
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/xsettings/overrides"
+    value: "{'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'menu:   minimize,maximize,close'>}"
+
+- name: Numlock on
+  dconf:
+    key: "/org/gnome/settings-daemon/peripherals/keyboard/numlock-state"
+    value: "'on'"
+
+- name: Desktop interface clock-show-date
+  dconf:
+    key: "/org/gnome/desktop/interface/clock-show-date"
+    value: "true"
+
+- name: Desktop interface monospace-font-name
+  dconf:
+    key: "/org/gnome/desktop/interface/monospace-font-name"
+    value: "'BitstreamVeraSansMono Nerd Font Roman 11'"
+
+- name: Desktop interface gtk-im-module
+  dconf:
+    key: "/org/gnome/desktop/interface/gtk-im-module"
+    value: "'gtk-im-context-simple'"
+
+- name: Desktop interface show-battery-percentage
+  dconf:
+    key: "/org/gnome/desktop/interface/show-battery-percentage"
+    value: "true"
+
+- name: Desktop interface cursor-theme
+  dconf:
+    key: "/org/gnome/desktop/interface/cursor-theme"
+    value: "'DMZ-White'"
+
+- name: Desktop interface gtk-theme
+  dconf:
+    key: "/org/gnome/desktop/interface/gtk-theme"
+    value: "'Adapta'"
+
+- name: Desktop interface icon-theme
+  dconf:
+    key: "/org/gnome/desktop/interface/icon-theme"
+    value: "'Papirus'"
+
+- name: Terminal command
+  dconf:
+    key: "/org/gnome/desktop/applications/terminal/exec"
+    value: "'gnome-terminal --maximize -- tmux'"
+
+- name: Screensaver
+  dconf:
+    key: "/org/gnome/desktop/screensaver/picture-uri"
+    value: "'file:///usr/share/backgrounds/{{ wallpaper }}'"
+
+- name: Set background
+  dconf:
+    key: "/org/gnome/desktop/background/picture-uri"
+    value: "'file:///usr/share/backgrounds/{{ wallpaper }}'"
+
+- name: Set theme
+  dconf:
+    key: "/org/gnome/desktop/wm/preferences/theme"
+    value: "'Adapta'"
+
+- name: Set pl input source
+  dconf:
+    key: "/org/gnome/desktop/input-sources/sources"
+    value: "[('xkb', 'pl')]"
+
+- name: Disable terminal menu accelerator
+  dconf:
+    key: "/org/gnome/terminal/legacy/menu-accelerator-enabled"
+    value: "false"
+
+- name: Terminal background color
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/background-color"
+    value: "'rgb(38,38,38)'"
+
+- name: Terminal dont use theme colors
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/use-theme-colors"
+    value: "false"
+
+- name: Terminal visible name
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/visible-name"
+    value: "'{{ user }}'"
+
+- name: Budgie panel migration level
+  dconf:
+    key: "/com/solus-project/budgie-panel/migration-level"
+    value: "1"
+
+- name: Budgie panel panels
+  dconf:
+    key: "/com/solus-project/budgie-panel/panels"
+    value: "['ed74ace0-f0c1-11e8-96b2-0800275eda49']"
+
+- name: Budgie panel settings size
+  dconf:
+    key: "/com/solus-project/budgie-panel/panels/{ed74ace0-f0c1-11e8-96b2-0800275eda49}/size"
+    value: "39"
+
+- name: Budgie panel settings dock-mode
+  dconf:
+    key: "/com/solus-project/budgie-panel/panels/{ed74ace0-f0c1-11e8-96b2-0800275eda49}/dock-mode"
+    value: "false"
+
+- name: Budgie panel settings enable-shadow
+  dconf:
+    key: "/com/solus-project/budgie-panel/panels/{ed74ace0-f0c1-11e8-96b2-0800275eda49}/enable-shadow"
+    value: "false"
+
+- name: Budgie panel settings applets
+  dconf:
+    key: "/com/solus-project/budgie-panel/panels/{ed74ace0-f0c1-11e8-96b2-0800275eda49}/applets"
+    value: "['a711df60-f0c2-11e8-96b2-0800275eda49', 'ed74ace6-f0c1-11e8-96b2-0800275eda49', 'ed74acf1-f0c1-11e8-96b2-0800275eda49', 'e03851d6-f656-11e8-b54c-3c970e123ecc', '4400f810-f0c3-11e8-96b2-0800275eda49', '7fadd022-f0c3-11e8-96b2-0800275eda49', 'c85c8b36-f656-11e8-b54c-3c970e123ecc', 'db2f4030-f0c2-11e8-96b2-0800275eda49', 'ed74ace1-f0c1-11e8-96b2-0800275eda49', 'a772171c-f0c3-11e8-96b2-0800275eda49', '8ca75424-f0c3-11e8-96b2-0800275eda49']"
+
+- name: Budgie panel settings transparency
+  dconf:
+    key: "/com/solus-project/budgie-panel/panels/{ed74ace0-f0c1-11e8-96b2-0800275eda49}/transparency"
+    value: "'always'"
+
+- name: Budgie panel settings location
+  dconf:
+    key: "/com/solus-project/budgie-panel/panels/{ed74ace0-f0c1-11e8-96b2-0800275eda49}/location"
+    value: "'bottom'"
+
+- name: Budgie panel settings theme-regions
+  dconf:
+    key: "/com/solus-project/budgie-panel/panels/{ed74ace0-f0c1-11e8-96b2-0800275eda49}/theme-regions"
+    value: "false"
+
+- name: Pinned launchers
+  dconf:
+    key: "/com/solus-project/budgie-panel/instance/icon-tasklist/{db2f4030-f0c2-11e8-96b2-0800275eda49}/pinned-launchers"
+    value: "['']"
+
+- name: Applet sep1 position
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{7fadd022-f0c3-11e8-96b2-0800275eda49}/position"
+    value: "2"
+
+- name: Applet sep1 alignment
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{7fadd022-f0c3-11e8-96b2-0800275eda49}/alignment"
+    value: "'end'"
+
+- name: Applet sep1 name
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{7fadd022-f0c3-11e8-96b2-0800275eda49}/name"
+    value: "'Separator'"
+
+- name: Applet sep2 position
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{a772171c-f0c3-11e8-96b2-0800275eda49}/position"
+    value: "6"
+
+- name: Applet sep2 alignment
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{a772171c-f0c3-11e8-96b2-0800275eda49}/alignment"
+    value: "'end'"
+
+- name: Applet sep2 name
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{a772171c-f0c3-11e8-96b2-0800275eda49}/name"
+    value: "'Separator'"
+
+- name: Applet system tray position
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{ed74ace6-f0c1-11e8-96b2-0800275eda49}/position"
+    value: "0"
+
+- name: Applet system tray alignment
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{ed74ace6-f0c1-11e8-96b2-0800275eda49}/alignment"
+    value: "'end'"
+
+- name: Applet system tray name
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{ed74ace6-f0c1-11e8-96b2-0800275eda49}/name"
+    value: "'System Tray'"
+
+- name: Applet workspace switcher position
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{c85c8b36-f656-11e8-b54c-3c970e123ecc}/position"
+    value: "0"
+
+- name: Applet workspace switcher alignment
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{c85c8b36-f656-11e8-b54c-3c970e123ecc}/alignment"
+    value: "'center'"
+
+- name: Applet workspace switcher name
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{c85c8b36-f656-11e8-b54c-3c970e123ecc}/name"
+    value: "'Workspace Switcher'"
+
+- name: Applet clock position
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{a711df60-f0c2-11e8-96b2-0800275eda49}/position"
+    value: "3"
+
+- name: Applet clock alignment
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{a711df60-f0c2-11e8-96b2-0800275eda49}/alignment"
+    value: "'end'"
+
+- name: Applet clock name
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{a711df60-f0c2-11e8-96b2-0800275eda49}/name"
+    value: "'Clock'"
+
+- name: Applet sep3 position
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{8ca75424-f0c3-11e8-96b2-0800275eda49}/position"
+    value: "4"
+
+- name: Applet sep3 alignment
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{8ca75424-f0c3-11e8-96b2-0800275eda49}/alignment"
+    value: "'end'"
+
+- name: Applet sep3 name
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{8ca75424-f0c3-11e8-96b2-0800275eda49}/name"
+    value: "'Separator'"
+
+- name: Applet status indicator position
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{e03851d6-f656-11e8-b54c-3c970e123ecc}/position"
+    value: "1"
+
+- name: Applet status indicator alignment
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{e03851d6-f656-11e8-b54c-3c970e123ecc}/alignment"
+    value: "'end'"
+
+- name: Applet status indicator name
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{e03851d6-f656-11e8-b54c-3c970e123ecc}/name"
+    value: "'Status Indicator'"
+
+- name: Applet icon list position
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{db2f4030-f0c2-11e8-96b2-0800275eda49}/position"
+    value: "1"
+
+- name: Applet icon list alignment
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{db2f4030-f0c2-11e8-96b2-0800275eda49}/alignment"
+    value: "'start'"
+
+- name: Applet icon list name
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{db2f4030-f0c2-11e8-96b2-0800275eda49}/name"
+    value: "'Icon Task List'"
+
+- name: Applet user indicator position
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{4400f810-f0c3-11e8-96b2-0800275eda49}/position"
+    value: "9"
+
+- name: Applet user indicator alignment
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{4400f810-f0c3-11e8-96b2-0800275eda49}/alignment"
+    value: "'end'"
+
+- name: Applet user indicator name
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{4400f810-f0c3-11e8-96b2-0800275eda49}/name"
+    value: "'User Indicator'"
+
+- name: Applet raven trigger position
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{ed74acf1-f0c1-11e8-96b2-0800275eda49}/position"
+    value: "5"
+
+- name: Applet raven trigger alignment
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{ed74acf1-f0c1-11e8-96b2-0800275eda49}/alignment"
+    value: "'end'"
+
+- name: Applet raven trigger name
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{ed74acf1-f0c1-11e8-96b2-0800275eda49}/name"
+    value: "'Raven Trigger'"
+
+- name: Applet budgie menu position
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{ed74ace1-f0c1-11e8-96b2-0800275eda49}/position"
+    value: "0"
+
+- name: Applet budgie menu alignment
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{ed74ace1-f0c1-11e8-96b2-0800275eda49}/alignment"
+    value: "'start'"
+
+- name: Applet budgie menu name
+  dconf:
+    key: "/com/solus-project/budgie-panel/applets/{ed74ace1-f0c1-11e8-96b2-0800275eda49}/name"
+    value: "'Budgie Menu'"
+
+- name: Budgie wm button layout
+  dconf:
+    key: "/com/solus-project/budgie-wm/button-layout"
+    value: "'appmenu:minimize,maximize,close'"
+

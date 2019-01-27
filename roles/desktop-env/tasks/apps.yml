@@ -1,0 +1,15 @@
+- name: Install lightdm apt package
+  become: yes
+  apt:
+    name: lightdm
+    state: present
+
+- name: Remove gdm3 apt package
+  become: yes
+  apt:
+    name: gdm3
+    state: absent
+
+- name: Reconfigure dpkg
+  become: yes
+  command: dpkg-reconfigure -f noninteractive lightdm
