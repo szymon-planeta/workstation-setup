@@ -1,48 +1,3 @@
-- name: Set budgie-show-files-test keybinding hotkey
-  dconf:
-    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-files-test/binding"
-    value: "'<Primary><Alt>e'"
-
-- name: Set budgie-show-files-test keybinding command
-  dconf:
-    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-files-test/command"
-    value: "'nautilus --new-window %U'"
-
-- name: Set budgie-show-files-test keybinding name
-  dconf:
-    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-files-test/name"
-    value: "'Show File Browser'"
-
-- name: Set windowshuffler keybinding hotkey
-  dconf:
-    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/windowshuffler/binding"
-    value: "'<Super>s'"
-
-- name: Set windowshuffler keybinding command
-  dconf:
-    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/windowshuffler/command"
-    value: "'/usr/share/budgie-desktop/windowshuffler/matrix_wrapper'"
-
-- name: Set windowshuffler keybinding name
-  dconf:
-    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/windowshuffler/name"
-    value: "'Toggle Window Shuffler'"
-
-- name: Set budgie-screenshot-area-clipboard keybinding hotkey
-  dconf:
-    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-area-clipboard/binding"
-    value: "'<Shift><Ctrl>Print'"
-
-- name: Set budgie-screenshot-area-clipboard keybinding command
-  dconf:
-    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-area-clipboard/command"
-    value: "'gnome-screenshot -a -c'"
-
-- name: Set budgie-screenshot-area-clipboard keybinding name
-  dconf:
-    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-area-clipboard/name"
-    value: "'Copy a screenshot of an area to clipboard'"
-
 - name: Set xsettings
   dconf:
     key: "/org/gnome/settings-daemon/plugins/xsettings/overrides"
@@ -98,98 +53,20 @@
     key: "/org/gnome/desktop/screensaver/picture-uri"
     value: "'file:///usr/share/backgrounds/{{ wallpaper }}'"
 
-- name: Set theme
-  dconf:
-    key: "/org/gnome/desktop/wm/preferences/theme"
-    value: "'Adapta'"
-
-- name: Set keybinding switch-to-workspace-1
-  dconf:
-    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-1"
-    value: "['<Super>1']"
-
-- name: Set keybinding switch-to-workspace-2
-  dconf:
-    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-2"
-    value: "['<Super>2']"
-
-- name: Set keybinding switch-to-workspace-3
-  dconf:
-    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-3"
-    value: "['<Super>3']"
-
-- name: Set keybinding switch-to-workspace-4
-  dconf:
-    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-4"
-    value: "['<Super>4']"
-
-- name: Set keybinding move-to-workspace-1
-  dconf:
-    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-1"
-    value: "['<Shift><Super>exclam']"
-
-- name: Set keybinding move-to-workspace-2
-  dconf:
-    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-2"
-    value: "['<Shift><Super>at']"
-
-- name: Set keybinding move-to-workspace-3
-  dconf:
-    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-3"
-    value: "['<Shift><Super>numbersign']"
-
-- name: Set keybinding move-to-workspace-4
-  dconf:
-    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-4"
-    value: "['<Shift><Super>dollar']"
-
-- name: Unbind some keys
-  dconf:
-    key: "/org/gnome/desktop/wm/keybindings/{{ item }}"
-    value: "['']"
-  with_items:
-    - show-desktop
-    - switch-to-workspace-left
-    - switch-to-workspace-right
-
 - name: Set background
   dconf:
     key: "/org/gnome/desktop/background/picture-uri"
     value: "'file:///usr/share/backgrounds/{{ wallpaper }}'"
 
+- name: Set theme
+  dconf:
+    key: "/org/gnome/desktop/wm/preferences/theme"
+    value: "'Adapta'"
+
 - name: Set pl input source
   dconf:
     key: "/org/gnome/desktop/input-sources/sources"
     value: "[('xkb', 'pl')]"
-
-- name: Disable gnome-terminal keybindings
-  dconf:
-    key: "/org/gnome/terminal/legacy/keybindings/{{ item }}"
-    value: "'disabled'"
-  with_items:
-    - new-tab
-    - switch-to-tab-1
-    - switch-to-tab-2
-    - switch-to-tab-3
-    - switch-to-tab-4
-    - switch-to-tab-5
-    - switch-to-tab-6
-    - switch-to-tab-7
-    - switch-to-tab-8
-    - switch-to-tab-9
-    - switch-to-tab-10
-    - find-previous
-    - prev-tab
-    - new-window
-    - close-tab
-    - find
-    - full-screen
-    - close-window
-    - move-tab-left
-    - find-next
-    - move-tab-right
-    - find-clear
-    - next-tab
 
 - name: Disable terminal menu accelerator
   dconf:
@@ -209,7 +86,7 @@
 - name: Terminal visible name
   dconf:
     key: "/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/visible-name"
-    value: "'planeta'"
+    value: "'{{ user }}'"
 
 - name: Budgie panel migration level
   dconf:
@@ -430,3 +307,4 @@
   dconf:
     key: "/com/solus-project/budgie-wm/button-layout"
     value: "'appmenu:minimize,maximize,close'"
+

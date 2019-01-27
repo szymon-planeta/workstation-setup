@@ -1,3 +1,6 @@
+wallpaper: minimalist-city.jpg
+user: planeta
+
 custom_keybindings: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-area-clipboard/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/windowshuffler/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-visualspace-right/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-files-test/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-window-clipboard/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-window/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-screenshot-area/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-desktop/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-visualspace-left/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
 
 web_keybinding: "'<Primary><Alt>f'"
@@ -27,3 +30,17 @@ budgie_visualspace_left_name: "'Move to Workspace left'"
 file_explorer_keybinding: "'<Primary><Alt>e'"
 file_explorer_command: "'nautilus --new-window %U'"
 file_explorer_name: "'Show File Browser'"
+
+window_shuffler_keybinding: "'<Super>s'"
+window_shuffler_command: "'/usr/share/budgie-desktop/windowshuffler/matrix_wrapper'"
+window_shuffler_name: "'Toggle Window Shuffler'"
+
+switch_to_workspace_1_keybinding: "['<Super>1']"
+switch_to_workspace_2_keybinding: "['<Super>2']"
+switch_to_workspace_3_keybinding: "['<Super>3']"
+switch_to_workspace_4_keybinding: "['<Super>4']"
+
+move_to_workspace_1_keybinding: "['<Shift><Super>exclam']"
+move_to_workspace_2_keybinding: "['<Shift><Super>at']"
+move_to_workspace_3_keybinding: "['<Shift><Super>numbersign']"
+move_to_workspace_4_keybinding: "['<Shift><Super>dollar']"

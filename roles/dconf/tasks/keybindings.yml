@@ -121,3 +121,95 @@
     key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/budgie-show-files-test/name"
     value: "{{ file_explorer_name }}"
 
+- name: Set windowshuffler keybinding hotkey
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/windowshuffler/binding"
+    value: "{{ window_shuffler_keybinding }}"
+
+- name: Set windowshuffler keybinding command
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/windowshuffler/command"
+    value: "{{ window_shuffler_command }}"
+
+- name: Set windowshuffler keybinding name
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/windowshuffler/name"
+    value: "{{ window_shuffler_name }}"
+
+- name: Set keybinding switch-to-workspace-1
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-1"
+    value: "{{ switch_to_workspace_1_keybinding }}"
+
+- name: Set keybinding switch-to-workspace-2
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-2"
+    value: "{{ switch_to_workspace_2_keybinding }}"
+
+- name: Set keybinding switch-to-workspace-3
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-3"
+    value: "{{ switch_to_workspace_3_keybinding }}"
+
+- name: Set keybinding switch-to-workspace-4
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-4"
+    value: "{{ switch_to_workspace_4_keybinding }}"
+
+- name: Set keybinding move-to-workspace-1
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-1"
+    value: "{{ move_to_workspace_1_keybinding }}"
+
+- name: Set keybinding move-to-workspace-2
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-2"
+    value: "{{ move_to_workspace_2_keybinding }}"
+
+- name: Set keybinding move-to-workspace-3
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-3"
+    value: "{{ move_to_workspace_3_keybinding }}"
+
+- name: Set keybinding move-to-workspace-4
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/move-to-workspace-4"
+    value: "{{ move_to_workspace_4_keybinding }}"
+
+- name: Unbind some keys
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/{{ item }}"
+    value: "['']"
+  with_items:
+    - show-desktop
+    - switch-to-workspace-left
+    - switch-to-workspace-right
+
+- name: Disable gnome-terminal keybindings
+  dconf:
+    key: "/org/gnome/terminal/legacy/keybindings/{{ item }}"
+    value: "'disabled'"
+  with_items:
+    - new-tab
+    - switch-to-tab-1
+    - switch-to-tab-2
+    - switch-to-tab-3
+    - switch-to-tab-4
+    - switch-to-tab-5
+    - switch-to-tab-6
+    - switch-to-tab-7
+    - switch-to-tab-8
+    - switch-to-tab-9
+    - switch-to-tab-10
+    - find-previous
+    - prev-tab
+    - new-window
+    - close-tab
+    - find
+    - full-screen
+    - close-window
+    - move-tab-left
+    - find-next
+    - move-tab-right
+    - find-clear
+    - next-tab

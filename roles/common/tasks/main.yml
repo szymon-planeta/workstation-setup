@@ -1,5 +1,2 @@
-- name: Configure dconf
-  import_tasks: dconf.yml
-
 - name: Copy config files
   import_tasks: configs.yml
