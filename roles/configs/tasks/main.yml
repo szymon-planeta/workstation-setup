@@ -1,42 +1,17 @@
-- name: Copy .zshrc
+- name: Copy configs
   copy:
-    src: .zshrc
-    dest: /home/{{ user }}/.zshrc
+    src: "{{ item }}"
+    dest: /home/{{ user }}/{{ item }}
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: u=rw,g=r,o=r
-
-- name: Copy .zsh_aliases
-  copy:
-    src: .zsh_aliases
-    dest: /home/{{ user }}/.zsh_aliases
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    mode: u=rw,g=r,o=r
-
-- name: Copy .gitconfig
-  copy:
-    src: .gitconfig
-    dest: /home/{{ user }}/.gitconfig
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    mode: u=rw,g=r,o=r
-
-- name: Copy .tmux.conf
-  copy:
-    src: .tmux.conf
-    dest: /home/{{ user }}/.tmux.conf
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    mode: u=rw,g=r,o=r
-
-- name: Copy .vimrc
-  copy:
-    src: .vimrc
-    dest: /home/{{ user }}/.vimrc
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    mode: u=rw,g=r,o=r
+  loop:
+    - .zshrc
+    - .zsh_aliases
+    - .gitconfig
+    - .tmux.conf
+    - .vimrc
+    - .custom_envs.zsh
 
 - name: Ensure gtk dir exists
   file:

@@ -52,16 +52,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-PROMPT='$(gbt $?)'
-export GBT_CARS='Status, Dir, Git, Sign'
-export GBT_CAR_SIGN_SYMBOL_FM='none'
-export GBT_CAR_SIGN_USER_FM='none'
-export GBT_CAR_SIGN_ADMIN_FM='none'
-export GBT_CAR_DIR_DEPTH='2'
-export GBT__HOME='/usr/share/gbt'
-source "$GBT__HOME/sources/prompt_forwarding/local"
-
-export EDITOR='vim'
-
 zsh_syntax_file='/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
 [ -f "$zsh_syntax_file" ] && source "$zsh_syntax_file"
+
+[ -f ~/.custom_envs.zsh ] && source ~/.custom_envs.zsh
