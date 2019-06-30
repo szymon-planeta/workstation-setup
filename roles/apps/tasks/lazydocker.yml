@@ -1,0 +1,16 @@
+- name: Check if lazydocker is installed
+  shell: command -v lazydocker >/dev/null 2>&1
+  register: lazydocker_check
+  changed_when: false
+  failed_when: false
+
+- name: Unarchive lazydocker
+  become: yes
+  unarchive:
+    src: https://github.com/jesseduffield/lazydocker/releases/download/v0.2.3/lazydocker_0.2.3_Linux_x86_64.tar.gz
+    dest: /usr/local/bin
+    extra_opts:
+    - --wildcards
+    - 'lazydocker'
+    remote_src: yes
+  when: lazydocker_check.rc != 0

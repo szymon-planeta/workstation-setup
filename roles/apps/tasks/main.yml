@@ -6,3 +6,6 @@
 
 - name: diff-so-fancy
   import_tasks: diff-so-fancy.yml
+
+- name: lazydocker
+  import_tasks: lazydocker.yml
