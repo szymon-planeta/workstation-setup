@@ -1,6 +1,9 @@
 - name: bat
   import_tasks: bat.yml
 
+- name: ripgrep
+  import_tasks: ripgrep.yml
+
 - name: fzf
   import_tasks: fzf.yml
 
