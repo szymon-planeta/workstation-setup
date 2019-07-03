@@ -1,5 +1,6 @@
 # fzf
 export FZF_DEFAULT_OPTS="--preview '(bat --style=numbers --color=always {} || cat {}) 2>/dev/null | head -500'"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
 # gbt
 PROMPT='$(gbt $?)'
