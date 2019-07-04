@@ -2,5 +2,5 @@
   become: yes
   user:
     name: "{{ user }}"
-    groups: "{{ user }},adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare"
+    groups: "{{ user }},adm,cdrom,sudo,dip,plugdev"
     shell: /usr/bin/zsh
