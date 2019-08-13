@@ -11,6 +11,6 @@ export GBT_CAR_SIGN_USER_FM='none'
 export GBT_CAR_SIGN_ADMIN_FM='none'
 export GBT_CAR_DIR_DEPTH='2'
 export GBT__HOME='/usr/share/gbt'
-source "$GBT__HOME/sources/prompt_forwarding/local"
+source "$GBT__HOME/sources/gbts/cmd/local.sh"
 
 export EDITOR='vim'
